@@ -1,0 +1,10 @@
+<snippet>
+	<tabTrigger>while</tabTrigger>
+	<scope>source.praat</scope>
+	<description>While Loop</description>
+	<content><![CDATA[
+while ${1:}
+	${0:}
+endwhile
+]]></content>
+</snippet>
