@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+
+	Praat syntax highlighting for Sublime Text 2
+	v.0.2
+	Author: Mauricio Figueroa (mauriciofigueroac@gmail.com)
+
+	This language definition is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+	You should have received a copy of the GNU General Public License along with file; see the file COPYING. If not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+	A copy of the GNU General Public License is also available at <http://www.gnu.org/licenses/>.
+	
+-->
+<plist version="0.2">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>praat</string>
+		<string>script</string>
+		<string>psc</string>
+		<string>praat_script</string>
+		<string>praatscript</string>
+		<string>praat-script</string>
+		<string>praat-batch</string>
+	</array>
+	<key>name</key>
+	<string>Praat</string>
+	<!--code folding-->
+	<key>foldingStartMarker</key>
+	<string>^\s*(for|if|form|procedure|repeat|while)\s</string>
+	<key>foldingStopMarker</key>
+	<string>^\s*(endfor|elsif|else|endif|endform|endproc|endwhile|until)\s*</string>
+	<!--patterns-->
+	<key>patterns</key>
+	<array>
+		<!--comments-->
+		<dict>
+			<key>match</key>
+			<string>(^|\s)#(.*)$</string>
+			<key>name</key>
+			<string>comment.line.number-sign.source.praat</string>
+		</dict>
+		<!--quotations: double and simple, and regex escapes exeptions within quotations-->
+		<dict>
+			<key>begin</key>
+			<string>"</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.source.praat</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>"</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.source.praat</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.double.source.praat</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\.</string>
+					<key>name</key>
+					<string>constant.character.escape.source.praat</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>'</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.source.praat</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>'</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.source.praat</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.single.source.praat</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\.</string>
+					<key>name</key>
+					<string>constant.character.escape.source.praat</string>
+				</dict>
+			</array>
+		</dict>
+		<!--numerals-->
+		<dict>
+			<key>match</key>
+			<string>\b[0-9]+\.?[0-9]*\b</string>
+			<key>name</key>
+			<string>constant.numeric.source.praat</string>
+		</dict>
+		<!--methods-->
+		<!--<dict>
+			<key>match</key>
+			<string>(Bark|Bars|Bartlett|Bottom|bottom|Centre|centre|Courier|Cubic|dB|energy|Gaussian|Half|half|Hamming|Hanning|Helvetica|Hertz|Kaiser2|Left|left|Linear|Nearest|no|None|Palatino|Parabolic|Rectangular|rectangular|Right|right|Semitones|Sinc|Sinc70|Sinc700|sones|Square|Times|Top|top|Welch|yes)</string>
+			<key>name</key>
+			<string></string>
+		</dict>-->
+		<!--keywords-->
+		<dict>
+			<key>match</key>
+			<string>(^|\s+)(and|assert|elif|else|elsif|endeditor|endfor|endform|endif|endproc|endwhile|fi|for|form|from|if|nocheck|noprogress|not|nowarn|or|proc|procedure|repeat|to|until|warn|while)\s</string>
+			<key>name</key>
+			<string>keyword.control.source.praat</string>
+			<!--PROBLEM 1: "and" and for" shouldn't be highlighted after form comments. Explore negative lookbehind (such as "(?<!a)b").-->
+			<!--PROBLEM 2: tabs after loops and conditional jumps should be illegal; currently they aren't.-->
+		</dict>
+		<!--formTypes-->
+		<dict>
+			<key>match</key>
+			<string>^\s*(boolean|button|choice|comment|integer|natural|option|optionmenu|positive|real|sentence|text|word)</string>
+			<key>name</key>
+			<string>support.class.praat</string>
+		</dict>
+		<!--objects-->
+		<!--<dict>
+			<key>match</key>
+			<string>(Activation|AffineTransform|AmplitudeTier|Art|Artword|Autosegment|BarkFilter|Categories|CCA|Cepstrum|Cepstrumc|ChebyshevSeries|ClassificationTable|Cochleagram|Collection|Configuration|Confusion|ContingencyTable|Corpus|Correlation|Covariance|CrossCorrelationTable|CrossCorrelationTables|Diagonalizer|Discriminant|Dissimilarity|Distance|Distributions|DTW|DurationTier|EEG|Eigen|ERP|ERPTier|Excitation|Excitations|ExperimentMFC|FeatureWeights|FFNet|Formant|FormantFilter|FormantGrid|FormantPoint|FormantTier|GaussianMixture|Harmonicity|HMM|HMM_Observation|HMM_ObservationSequence|HMM_State|HMM_StateSequence|Index|Intensity|IntensityTier|IntervalTier|ISpline|KlattGrid|KlattTable|KNN|Label|LegendreSeries|LFCC|LinearRegression|LogisticRegression|LongSound|LPC|Ltas|Manipulation|ManPages|Matrix|MelFilter|MFCC|MixingMatrix|Movie|MSpline|Network|OTGrammar|OTHistory|OTMulti|PairDistribution|ParamCurve|Pattern|PCA|Permutation|Pitch|PitchTier|PointProcess|Polygon|Polynomial|Procrustes|RealPoint|RealTier|ResultsMFC|Roots|Salience|ScalarProduct|Similarity|SimpleString|SortedSetOfString|Sound|Speaker|Spectrogram|Spectrum|SpectrumTier|SpeechSynthesizer|SpellingChecker|SPINET|SSCP|Strings|StringsIndex|SVD|Table|TableOfReal|TextGrid|TextInterval|TextPoint|TextTier|Tier|Transition|VocalTract|Weight|WordList)</string>
+			<key>name</key>
+			<string></string>
+		</dict>-->
+		<!--objectDirectives-->
+		<!--<dict>
+			<key>match</key>
+			<string>(minus|plus|select|editor)</string>
+			<key>name</key>
+			<string></string>
+		</dict>-->
+		<!--systemDirectives-->
+		<!--<dict>
+			<key>match</key>
+			<string>(sendsocket|system|system_nocheck)</string>
+			<key>name</key>
+			<string></string>
+		</dict>-->
+		<!--fileDirectives-->
+		<!--<dict>
+			<key>match</key>
+			<string>(fileappend|fileappendinfo|filedelete|include)</string>
+			<key>name</key>
+			<string></string>
+		</dict>-->
+		<!--directives-->
+		<!--<dict>
+			<key>match</key>
+			<string>(clearinfo|echo|execute|exit|pause|print|printline|sendpraat|stopwatch)</string>
+			<key>name</key>
+			<string></string>
+		</dict>-->
+		<!--commands-->
+		<dict>
+			<key>match</key>
+			<string>(Add|Append|Arrow|Autocorrelate|Axes|Change|Close|Colour|Combine|Compute|Concatenate|Convert|Convolve|Copy|Count|Courier|Create|Cross|Dashed|De|Deepen|Dotted|Down|Draw|Duplicate|Edit|Erase|Extend|Extract|Filter|Filtering|Font|Formula|Get|Helvetica|Horizontal|Hum|Info|Insert|Inspect|Interpolate|Is|Kill|Lengthen|Line|List|Logarithmic|Marks|Merge|Move|Multiply|One|Override|Paint|Palatino|Picture|Pitch|Plain|Play|PostScript|Pre|Randomize|Read|Record|Remove|Rename|Replace|Resample|Reverse|Save|Scale|Scatter|Select|Set|Shift|Show|Smooth|Solid|Sort|Sound|Speckle|Subtract|Text|Times|To|Vertical|View|Write|Zoom)\s.+:</string>
+			<key>name</key>
+			<string>support.class.praat</string>
+		</dict>
+		<!--colors-->
+		<!--<dict>
+			<key>match</key>
+			<string>(Black|black|Blue|blue|Cyan|cyan|Green|green|Grey|grey|Lime|lime|Magenta|magenta|Maroon|maroon|Navy|navy|Olive|olive|Pink|pink|Purple|purple|Red|rd|Silver|silver|Teal|teal|White|white|Yellow|yellow)</string>
+			<key>name</key>
+			<string></string>
+		</dict>-->
+		<!--predefinedVariables-->
+		<!--<dict>
+			<key>match</key>
+			<string>(defaultDirectory$|homeDirectory$|macintosh|newline$|pi|praatVersion|praatVersion$|preferencesDirectory$|shellDirectory$|tab$|temporaryDirectory$|undefined|unix|windows)</string>
+			<key>name</key>
+			<string></string>
+		</dict>-->
+		<!--Operators-->
+		<dict>
+			<key>match</key>
+			<string>\s(!|!=|%|&amp;|&gt;|&gt;&lt;|&gt;=|&lt;|&lt;=|\*|\*=|\+|\+=|-|-=|/|/=|=|\^|and|dir|mod|not|or|\|)\s</string>
+			<key>name</key>
+			<string>keyword.operator.source.praat</string>
+			<!--PROBLEM 1: operator "<>" not working; coded as: "&gt;&lt;"-->
+		</dict>
+		<!--functions-->
+		<!--<dict>
+			<key>match</key>
+			<string>(abs|actanh|appendFile|appendFileLine|appendInfo|appendInfoLine|arccos|arccosh|arcsin|arcsinh|arctan|arctan2|barkToHerz|beginPause|besselI|besselK|beta|binomialP|binomialQ|ceiling|chiSquareP|chiSquareQ|chooseDirectory$|cos|cosh|createDirectory|demoClicked|demoClickedIn|demoCommandKeyPressed|demoExtraControlKeyPressed|demoInput|demoKey$|demoKeyPressed|demoOptionKeyPressed|demoShiftKeyPressed|demoShow|demoWaitForInput|demoWindowTitle|demoX|demoY|differenceLimensToPhon|endPause|endsWith|environment$|erb|erbToHertz|erf|erfc|exp|extractLine$|extractNumber|extractWord$|fisherP|fisherQ|floor|gaussP|gaussQ|hertzToBark|hertzToErb|hertzToMel|hertzToSemitones|imax|imin|index|index_regex|invBinomialP|invBinomialQ|invChiSquareQ|invFisherQ|invGaussQ|invSigmoid|invStudentQ|left$|length|ln|lnGamma|log10|log2|max|melToHertz|mid$|min|numberOfSelected|phonToDifferenceLimens|randomGauss|randomInteger|randomPoisson|randomUniform|replace$|replace_regex$|right$|rindex|rindex_regex|round|selected|selected$|semitonesToHerz|sigmoid|sin|sinc|sincpi|sinh|sqrt|startsWith|studentP|studentQ|tan|tanh|variableExists|writeFile|writeFileLine|writeInfo|writeInfoLine)</string>
+			<key>name</key>
+			<string></string>
+		</dict>-->
+		<!--file functions-->
+		<!--<dict>
+			<key>match</key>
+			<string>(defaultDirectory$|homeDirectory$|macintosh|newline$|pi|praatVersion|praatVersion$|preferencesDirectory$|shellDirectory$|tab$|temporaryDirectory$|undefined|unix|windows)</string>
+			<key>name</key>
+			<string></string>
+		</dict>-->
+		<!--object functions-->
+		<!--<dict>
+			<key>match</key>
+			<string>(exitScript|minusObject|plusObject|removeObject|runScript|selectObject)</string>
+			<key>name</key>
+			<string></string>
+		</dict>-->
+	</array>
+	<key>scopeName</key>
+	<string>source.praat</string>
+	<key>uuid</key>
+	<string>ca03e751-04ef-4330-9a6b-9b99aae1c418</string>
+</dict>
+</plist>
