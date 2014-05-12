@@ -49,6 +49,7 @@
     </dict>
     <!--quotations: double and simple, and regex escapes exeptions within quotations-->
     <dict>
+      <!--PROBLEM 1: Single quotation marks after "^\s*(comment|exit)\s" shouldn't trigger quotation syntax.-->
       <key>begin</key>
       <string>"</string>
       <key>beginCaptures</key>
@@ -140,7 +141,7 @@
     <!--formTypes-->
     <dict>
       <key>match</key>
-      <string>^\s*(boolean|button|choice|comment|integer|natural|option|optionmenu|positive|real|sentence|text|word)</string>
+      <string>^\s*(boolean|button|choice|comment|integer|natural|option|optionmenu|positive|real|sentence|text|word)\s</string>
       <key>name</key>
       <string>support.class.praat</string>
     </dict>
