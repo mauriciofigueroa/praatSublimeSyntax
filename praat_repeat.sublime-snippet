@@ -1,0 +1,10 @@
+<snippet>
+	<tabTrigger>repeat</tabTrigger>
+	<scope>source.praat</scope>
+	<description>Repeat Loop</description>
+	<content><![CDATA[
+repeat
+	${1:}
+until ${0:}
+]]></content>
+</snippet>

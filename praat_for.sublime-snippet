@@ -1,0 +1,10 @@
+<snippet>
+	<tabTrigger>for</tabTrigger>
+	<scope>source.praat</scope>
+	<description>For Loop</description>
+	<content><![CDATA[
+for ${1:i} from ${2:1 to 10}
+	${0:}
+endfor
+]]></content>
+</snippet>

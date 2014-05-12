@@ -1,0 +1,10 @@
+<snippet>
+	<tabTrigger>if</tabTrigger>
+	<scope>source.praat</scope>
+	<description>If Condition</description>
+	<content><![CDATA[
+if ${1:}
+	${0:}
+endif
+]]></content>
+</snippet>
