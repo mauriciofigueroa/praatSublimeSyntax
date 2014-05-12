@@ -8,6 +8,10 @@ Although this Praat syntax highlighter already works relatively
 well in Sublime Text 2, the highlighter is currently under heavy
 development. Many aspects still need to be defined, refined and/or fixed.
 
+So far, the syntax highlighter aims to work with the latest Praat
+syntax. Compatibility with previous syntax versions is only partial. I
+hope to improve compatibility in future editions of this project.
+
 ## Features
 
 * Highlighting of Praat's numerals, keywords, form elements,
