@@ -8,9 +8,7 @@ Although this Praat syntax highlighter already works relatively
 well in Sublime Text 2, the highlighter is currently under heavy
 development. Many aspects still need to be defined, refined and/or fixed.
 One example of its current problems is that it's really bad at dealing
-with single quotation marks. I wouldn't recommend using this
-highlighter until the first "oficial" release has been made, hopefully
-soon.
+with single quotation marks.
 
 So far, this syntax highlighter aims to work with the latest Praat
 syntax. Compatibility with previous syntax versions is only partial. I
