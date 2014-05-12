@@ -4,11 +4,14 @@
 
 ## Disclaimer
 
-Although this Praat syntax highlighter already works relatively fine in Sublime Text 2, the highlighter is currently under heavy development. Many aspects still need to be defined, refined and/or fixed.
+Although this Praat syntax highlighter already works relatively
+well in Sublime Text 2, the highlighter is currently under heavy
+development. Many aspects still need to be defined, refined and/or fixed.
 
 ## Features
 
-* Highlighting of Praat's numerals, keywords, form elements, commands, operators, comments and quoted texts.
+* Highlighting of Praat's numerals, keywords, form elements,
+commands, operators, comments and quoted texts.
 * Code folding for all types of blocks.
 * Auto completion snippets for most common loops and conditional jumps.
 
@@ -19,8 +22,17 @@ Although this Praat syntax highlighter already works relatively fine in Sublime 
 `C:\Users\YOUR_USER_NAME\AppData\Roaming\Sublime Text 2\Packages\User`
 * Restart Sublime Text 2.
 
-If your files end in any of the most common Praat script extensions (`.praat`, `.script`, `.psc`, `.praat_script`, `.praatscript`, `.praat-script`, `.praat-batch`), they should automatically be identified and highlighted by Sublime Text 2. Alternatively, you can select highlighting for Praat by selecting `View/Syntax/Praat`.
+If your files end in any of the most common Praat script extensions
+(`.praat`, `.script`, `.psc`, `.praat_script`, `.praatscript`,
+`.praat-script`, `.praat-batch`), they should automatically be identified
+and highlighted by Sublime Text 2. Alternatively, you can select
+highlighting for Praat by selecting `View/Syntax/Praat`.
 
 ## Inspiration for this highlighter
 
-This Praat syntax highlighter is very much and shamelessly inspired in José Joaquín's Praat syntax highlighter for Kate (https://github.com/jjatria/praatKateSyntax). Besides some small additions, the lists of command definitions are pretty much the same. The quotation and double quotation highlighting method was taken from the R syntax highlighter for Sublime Text 2.
+This Praat syntax highlighter is very much and shamelessly inspired in
+José Joaquín's Praat syntax highlighter for Kate
+(https://github.com/jjatria/praatKateSyntax). Besides some small additions,
+the lists of command definitions are pretty much the same. The quotation
+and double quotation highlighting method was taken from the R syntax
+highlighter for Sublime Text 2.
