@@ -7,19 +7,17 @@
 Although this Praat syntax highlighter already works relatively
 well in Sublime Text 2, the highlighter is currently under heavy
 development. Many aspects still need to be defined, refined and/or fixed.
-One example of its current problems is that it's really bad at dealing
-with single quotation marks.
 
-So far, this syntax highlighter aims to work with the latest Praat
-syntax. Compatibility with previous syntax versions is only partial. I
-hope to improve compatibility in future editions of this project.
+So far, it aims to work with the latest Praat syntax. Compatibility with
+previous syntax versions is only partial. I hope to gradually improve
+compatibility as I'm able to work on newer verions.
 
 ## Features
 
 * Highlighting of Praat's numerals, keywords, form elements,
 commands, operators, comments and quoted texts.
-* Code folding for all types of blocks.
-* Auto completion snippets for most common loops and conditional jumps.
+* Code folding for blocks.
+* Auto completion snippets for loops, conditional jumps and forms.
 
 ## Installation
 
