@@ -29,6 +29,7 @@
     <string>praatscript</string>
     <string>praat-script</string>
     <string>praat-batch</string>
+    <string>proc</string>
   </array>
   <key>name</key>
   <string>Praat</string>
