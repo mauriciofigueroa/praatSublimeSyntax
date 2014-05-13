@@ -49,7 +49,7 @@
     </dict>
     <!--quotations: double and simple, and regex escapes exeptions within quotations-->
     <dict>
-      <!--PROBLEM 1: Single quotation marks after "^\s*(comment|exit)\s" shouldn't trigger quotation syntax.-->
+      <!--Problem 1: negative lookbehind for the "^\s*(comment|exit)\s" cases not available-->
       <key>begin</key>
       <string>"</string>
       <key>beginCaptures</key>
@@ -84,7 +84,7 @@
     </dict>
     <dict>
       <key>begin</key>
-      <string>'</string>
+      <string>(\:|\s|\()'</string><!--Problem 1: Temporary (inelegant) solution to the apostrophe problem-->
       <key>beginCaptures</key>
       <dict>
         <key>0</key>
