@@ -2,8 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
 	Praat syntax highlighting for Sublime Text 2
-	v.0.2
+	v.0.21
 	Author: Mauricio Figueroa (mauriciofigueroac@gmail.com)
+
+  =Changes=
+    - 0.21: * Removed escape character ("\\.") for regular
+              expressions within quotation marks.
+            * Fixed bug for commands: only match after "^|\s*".
 
 	This language definition is free software: you can redistribute
 	it and/or modify it under the terms of the GNU General Public
@@ -73,15 +78,6 @@
       </dict>
       <key>name</key>
       <string>string.quoted.double.source.praat</string>
-      <key>patterns</key>
-      <array>
-        <dict>
-          <key>match</key>
-          <string>\\.</string>
-          <key>name</key>
-          <string>constant.character.escape.source.praat</string>
-        </dict>
-      </array>
     </dict>
     <dict>
       <key>begin</key>
@@ -106,15 +102,6 @@
       </dict>
       <key>name</key>
       <string>string.quoted.single.source.praat</string>
-      <key>patterns</key>
-      <array>
-        <dict>
-          <key>match</key>
-          <string>\\.</string>
-          <key>name</key>
-          <string>constant.character.escape.source.praat</string>
-        </dict>
-      </array>
     </dict>
     <!--numerals-->
     <dict>
@@ -184,7 +171,7 @@
     <!--commands-->
     <dict>
       <key>match</key>
-      <string>(Add|Append|Arrow|Autocorrelate|Axes|Change|Close|Colour|Combine|Compute|Concatenate|Convert|Convolve|Copy|Count|Courier|Create|Cross|Dashed|De|Deepen|Dotted|Down|Draw|Duplicate|Edit|Erase|Extend|Extract|Filter|Filtering|Font|Formula|Get|Helvetica|Horizontal|Hum|Info|Insert|Inspect|Interpolate|Is|Kill|Lengthen|Line|List|Logarithmic|Marks|Merge|Move|Multiply|One|Override|Paint|Palatino|Picture|Pitch|Plain|Play|PostScript|Pre|Randomize|Read|Record|Remove|Rename|Replace|Resample|Reverse|Save|Scale|Scatter|Select|Set|Shift|Show|Smooth|Solid|Sort|Sound|Speckle|Subtract|Text|Times|To|Vertical|View|Write|Zoom)\s.+:</string>
+      <string>^\s*(Add|Append|Arrow|Autocorrelate|Axes|Change|Close|Colour|Combine|Compute|Concatenate|Convert|Convolve|Copy|Count|Courier|Create|Cross|Dashed|De|Deepen|Dotted|Down|Draw|Duplicate|Edit|Erase|Extend|Extract|Filter|Filtering|Font|Formula|Get|Helvetica|Horizontal|Hum|Info|Insert|Inspect|Interpolate|Is|Kill|Lengthen|Line|List|Logarithmic|Marks|Merge|Move|Multiply|One|Override|Paint|Palatino|Picture|Pitch|Plain|Play|PostScript|Pre|Randomize|Read|Record|Remove|Rename|Replace|Resample|Reverse|Save|Scale|Scatter|Select|Set|Shift|Show|Smooth|Solid|Sort|Sound|Speckle|Subtract|Text|Times|To|Vertical|View|Write|Zoom)\s.+:</string>
       <key>name</key>
       <string>support.class.praat</string>
     </dict>
