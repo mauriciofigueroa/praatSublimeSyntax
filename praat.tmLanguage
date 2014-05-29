@@ -222,7 +222,7 @@
     <!--predefinedVariables-->
     <dict>
       <key>match</key>
-      <string>(^|\s*)(defaultDirectory\$|homeDirectory\$|macintosh|newline\$|pi|praatVersion\$|praatVersion|preferencesDirectory\$|shellDirectory\$|tab\$|temporaryDirectory\$|undefined|unix|windows)(?=\s*)</string>
+      <string>(^|\s*)(defaultDirectory\$|homeDirectory\$|macintosh|newline\$|pi|praatVersion\$|praatVersion|preferencesDirectory\$|shellDirectory\$|tab\$|temporaryDirectory\$|undefined|unix|windows)(\s+|$)</string>
       <key>name</key>
       <string>support.function.builtin.praat</string>
     </dict>
