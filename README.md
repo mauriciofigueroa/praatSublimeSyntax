@@ -25,7 +25,7 @@ predefinedVariables, functions and object functions.
 
 * Download `praat.tmLanguage` and the snippet files.
 * Save them into your package folder. Under Windows 7, the path should be:
-`C:\Users\YOUR_USER_NAME\AppData\Roaming\Sublime Text 2\Packages\User`
+`C:\Users\YOUR_USER_NAME\AppData\Roaming\Sublime Text 2\Packages\User`.
 Note that "AppData" is normally a hidden folder.
 * A similar path should work for other Windows versions.
 * Restart Sublime Text 2.
