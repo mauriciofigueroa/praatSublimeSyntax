@@ -61,7 +61,7 @@
   <string>Praat</string>
   <!--code folding-->
   <key>foldingStartMarker</key>
-  <string>^\s*(for|if|form|procedure|repeat|while)(?=\s)</string>
+  <string>^\s*(for|if|form|procedure|proc|repeat|while)(?=\s)</string>
   <key>foldingStopMarker</key>
   <string>^\s*(endfor|elsif|else|endif|endform|endproc|endwhile|until)(?=\s*)</string>
   <!--patterns-->
@@ -133,7 +133,7 @@
     <!--Procedures-->
     <dict>
       <key>begin</key>
-      <string>^\s*(procedure)\s+(?=[a-zA-Z][A-Za-z0-9_]*(\s*:|\s*\(|$))</string>
+      <string>^\s*(procedure|proc)\s+(?=[a-zA-Z][A-Za-z0-9_]*(\s*:|\s*\(|$))</string>
       <key>beginCaptures</key>
       <dict>
         <key>1</key>
