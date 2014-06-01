@@ -2,15 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
 	Praat syntax highlighting for Sublime Text 2
-	v.0.22
+	v.0.23
 	Author: Mauricio Figueroa (mauriciofigueroac@gmail.com)
 
   =TODO=  
-    - Procedures highlighting.
     - Improve compatibility with older syntax definitions.
-    - Add highlighting for common invalid.illegal sequences.
+    - Add highlighting for common invalid/illegal sequences.
 
   =Changes=
+    - 0.23: * Procedures highlighting enabled.
     - 0.22: * Added comparison operator: "==".
             * Removed unnecessary step ("source") from root groups.
             * Added root group definitions for: methods, objects,
@@ -129,6 +129,79 @@
       <string>\b[0-9]+\.?[0-9]*\b</string>
       <key>name</key>
       <string>constant.numeric.praat</string>
+    </dict>
+    <!--Procedures-->
+    <dict>
+      <key>begin</key>
+      <string>^\s*(procedure)\s+(?=[a-zA-Z][A-Za-z0-9_]*(\s*:|\s*\(|$))</string>
+      <key>beginCaptures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>keyword.control.praat</string>
+        </dict>
+      </dict>
+      <key>end</key>
+      <string>($|\))</string>
+      <key>name</key>
+      <string>meta.function.praat</string>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>begin</key>
+          <string>(?=[a-zA-Z][a-zA-z_])</string>
+          <key>contentName</key>
+          <string>entity.name.function.praat</string>
+          <key>end</key>
+          <string>(?![A-Za-z0-9_])</string>
+          <key>patterns</key>
+          <array>
+            <dict>
+              <key>include</key>
+              <string>#entity_name_function</string>
+            </dict>
+          </array>
+        </dict>
+        <dict>
+          <key>begin</key>
+          <string>(:|\()</string>
+          <key>beginCaptures</key>
+          <dict>
+            <key>1</key>
+            <dict>
+              <key>name</key>
+              <string>punctuation.definition.parameters.begin.praat</string>
+            </dict>
+          </dict>
+          <key>contentName</key>
+          <string>meta.function.parameters.praat</string>
+          <key>end</key>
+          <string>($|\))</string>
+          <key>patterns</key>
+          <array>
+            <dict>
+              <key>captures</key>
+              <dict>
+                <key>1</key>
+                <dict>
+                  <key>name</key>
+                  <string>variable.parameter.function.praat</string>
+                </dict>
+              </dict>
+              <key>match</key>
+              <string>\b([a-z][a-zA-Z_0-9]*)\s*((?=,)|(?=$)|(?=\)))</string>
+            </dict>
+          </array>
+        </dict>
+      </array>
+    </dict>
+    <!--procedure calls-->
+    <dict>
+      <key>match</key>
+      <string>(^\s*call)|(^\s*@[a-zA-Z_0-9]*(?![A-Za-z0-9_]))</string>
+      <key>name</key>
+      <string>entity.name.function.praat</string>
     </dict>
     <!--methods-->
     <dict>
