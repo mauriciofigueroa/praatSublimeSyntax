@@ -214,7 +214,7 @@
     <!--keywords-->
     <dict>
       <key>match</key>
-      <string>(^|\s+)(and|assert|elif|else|elsif|endeditor|endfor|endform|endif|endproc|endwhile|fi|for|form|from|if|nocheck|noprogress|not|nowarn|or|proc|procedure|repeat|to|until|warn|while)(?=\s)</string>
+      <string>(^|\s+)(and|assert|elif|else|elsif|endeditor|endfor|endform|endif|endproc|endwhile|fi|for|form|from|if|nocheck|noprogress|not|nowarn|or|proc|procedure|repeat|to|until|warn|while)(?=\s|$)</string>
       <key>name</key>
       <string>keyword.control.praat</string>
       <!--PROBLEM 1: "and" and for" shouldn't be highlighted after form comments. Explore negative lookbehind (such as "(?<!a)b").-->
@@ -238,7 +238,7 @@
     <!--objectDirectives-->
     <dict>
       <key>match</key>
-      <string>^\s*(minus|plus|(select all|select)|editor)(?=\s)</string>
+      <string>^\s*(minus|plus|(select all|select)|editor)(?=\s|$)</string>
       <key>name</key>
       <string>support.function.builtin.praat</string>
     </dict>
@@ -259,7 +259,7 @@
     <!--directives-->
     <dict>
       <key>match</key>
-      <string>^\s*(clearinfo|echo|execute|exit|pause|print|printline|sendpraat|stopwatch)(?=\s)</string>
+      <string>^\s*(clearinfo|echo|execute|exit|pause|print|printline|sendpraat|stopwatch)(?=\s|$)</string>
       <key>name</key>
       <string>support.function.builtin.praat</string>
     </dict>
