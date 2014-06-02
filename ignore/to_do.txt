@@ -1,0 +1,65 @@
+Funciona en Linux, en donde la carpeta de los paquetes está en
+
+    ~/.config/sublime-text-2/Packages
+
+Sobre el highlighter: buen trabajo! :)
+
+Algunas observaciones:
+
+*   Dentro de un form, no solo se destacan las palabras que
+    no deben cuando hay un string sin quotes. Ejemplo:
+
+       form Prueba
+            sentence TextGrid_directory
+           word Label
+            optionmenu Format: 1
+               option Pretty printed
+                option Minified
+       endform
+
+    Ahí se destaca TextGrid_directory, Label y "Pretty printed"
+    como comandos, aunque son strings. Nótese que "Minified"
+    no se destaca (porque no hay ningún comando que empiece
+    con esa palabra?).
+
+*   En los "inline if" del tipo
+
+        variable = if valor > 10 then 1 else 0 fi
+
+    que sería equivalente a
+
+        if valor > 10
+            variable = 1
+        else
+            variable = 0
+        endif
+
+    no se destaca correctamente ni el "then" ni el "fi" de cierre.
+    Interesantemente, sí se destaca correctamente lo demás. :)
+
+*   Las líneas quebradas no se reconocen como tales. En
+
+        hola$ = "asdad
+            ... asdad"
+
+    Los tres puntos ("...") no son parte del string. Para praat, esa
+    línea es equivalente a
+
+        hola$ = "asdad asdad"
+
+    Eso sí, el resto del destacado parece estar bien. :)
+
+*   Los comentarios "inline" tampoco se reconocen:
+
+        var += 1 ; Esto es un comentario
+
+*   El comando "Copy..." no se destaca como los demás:
+
+        Get label of interval: 1, 2
+        Copy: "some_name"
+
+    Por lo menos en mi computador, con "Copy" no se reconoce
+    el final del comando, que continúa hasta el final de la línea.
+
+*   Esto puede que sea un feature y no un bug: no se destacan
+    los "variable replacement" (eg. 'variable'). Intencional?
