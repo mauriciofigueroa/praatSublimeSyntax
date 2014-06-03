@@ -5,7 +5,7 @@
 ## Disclaimer
 
 Although this Praat syntax highlighter already works relatively
-well in Sublime Text, the highlighter is currently under development.
+well in [Sublime Text][], the highlighter is currently under development.
 Some aspects still need to be defined, refined and/or fixed.
 
 So far, it aims to work with the latest Praat syntax. Compatibility with
@@ -39,9 +39,11 @@ select highlighting for Praat by selecting `View/Syntax/Praat`.
 ## Inspiration for this highlighter
 
 This Praat syntax highlighter is very much and shamelessly inspired in
-José Joaquín's Praat syntax highlighter for Kate
-(https://github.com/jjatria/praatKateSyntax). Besides some small additions,
+José Joaquín's Praat [syntax highlighter for Kate][]. Besides some small additions,
 the lists of command definitions are pretty much the same. The quotation
 and double quotation highlighting method was taken from the R syntax
 highlighter for Sublime Text. The procedure highlighting is inspired in
 the system used in Python's syntax highlighter for Sublime Text.
+
+[syntax highlighter for Kate]: https://github.com/jjatria/praatKateSyntax
+[Sublime Text]: http://www.sublimetext.com/
