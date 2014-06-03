@@ -60,7 +60,7 @@ v.0.2
       Welch
       yes
 
-<!--keywords--> CHECK!
+<!--keywords-->
       and
       assert
       elif
@@ -90,7 +90,7 @@ v.0.2
       warn
       while
 
-<!--formTypes--> CHECK!
+<!--formTypes-->
       boolean
       button
       choice
@@ -257,7 +257,7 @@ v.0.2
       sendpraat
       stopwatch
 
-<!--commands--> CHECK!
+<!--commands-->
       Add
       Append
       Arrow
@@ -400,7 +400,7 @@ v.0.2
       unix
       windows
 
-<!--operators--> CHECK!
+<!--operators-->
       !
       !=
       %
