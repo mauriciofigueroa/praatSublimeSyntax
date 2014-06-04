@@ -68,7 +68,7 @@ v.0.2
       elsif
       endeditor
       endfor
-      endform<!---->
+      endform <!--mine-->
       endif
       endproc
       endwhile
@@ -83,7 +83,7 @@ v.0.2
       nowarn
       or
       proc
-      procedure<!---->
+      procedure <!--mine-->
       repeat
       to
       until
@@ -309,6 +309,7 @@ v.0.2
       Merge
       Move
       Multiply
+      New <!--mine-->
       One
       Override
       Paint
@@ -422,9 +423,9 @@ v.0.2
       == <!--mine-->
       ^
       and
-      dir <!-- mine-->
-      div <!-- mine-->
-      mod <!-- mine-->
+      dir <!--mine-->
+      div <!--mine-->
+      mod <!--mine-->
       not
       or
       |
