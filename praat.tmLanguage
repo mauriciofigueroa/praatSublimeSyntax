@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
 	Praat syntax highlighting for Sublime Text 2
-	v.0.23
+	v.0.24
 	Author: Mauricio Figueroa (mauriciofigueroac@gmail.com)
 
   =TODO=  
@@ -10,6 +10,7 @@
     - Add highlighting for common invalid/illegal sequences.
 
   =Changes=
+    - 0.24: * Several small corrections to matching definitions.
     - 0.23: * Procedures highlighting enabled.
     - 0.22: * Added comparison operator: "==".
             * Removed unnecessary step ("source") from root groups.
@@ -266,7 +267,7 @@
     <!--commands-->
     <dict>
       <key>match</key>
-      <string>(\s|^\s*)(Add|Append|Arrow|Autocorrelate|Axes|Change|Close|Colour|Combine|Compute|Concatenate|Convert|Convolve|Copy|Count|Courier|Create|Cross|Dashed|De|Deepen|Dotted|Down|Draw|Duplicate|Edit|Erase|Extend|Extract|Filter|Filtering|Font|Formula|Get|Helvetica|Horizontal|Hum|Info|Insert|Inspect|Interpolate|Is|Kill|Lengthen|Line|List|Logarithmic|Marks|Merge|Move|Multiply|One|Override|Paint|Palatino|Picture|Pitch|Plain|Play|PostScript|Pre|Randomize|Read|Record|Remove|Rename|Replace|Resample|Reverse|Save|Scale|Scatter|Select|Set|Shift|Show|Smooth|Solid|Sort|Sound|Speckle|Subtract|Text|Times|To|Vertical|View|Write|Zoom)(\s*.*(?=:)|\s*.*(?=\.{3})|(\s*)(.*$))</string>
+      <string>(\s|^\s*)(Add|Append|Arrow|Autocorrelate|Axes|Change|Close|Colour|Combine|Compute|Concatenate|Convert|Convolve|Copy|Count|Courier|Create|Cross|Dashed|De|Deepen|Dotted|Down|Draw|Duplicate|Edit|Erase|Extend|Extract|Filter|Filtering|Font|Formula|Get|Helvetica|Horizontal|Hum|Info|Insert|Inspect|Interpolate|Is|Kill|Lengthen|Line|List|Logarithmic|Marks|Merge|Move|Multiply|One|Override|Paint|Palatino|Picture|Pitch|Plain|Play|PostScript|Pre|Randomize|Read|Record|Remove|Rename|Replace|Resample|Reverse|Save|Scale|Scatter|Select|Set|Shift|Show|Smooth|Solid|Sort|Sound|Speckle|Subtract|Text|Times|To|Vertical|View|Write|Zoom)(\s*.*(?=:\s+)|\s*.*(?=\.{3}\s+)|(\s*)(.*$))</string>
       <key>name</key>
       <string>support.class.praat</string>
     </dict>
