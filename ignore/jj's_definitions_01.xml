@@ -61,34 +61,36 @@ v.0.2
       yes
 
 <!--keywords-->
-      and
-      assert
-      elif
-      else
-      elsif
-      endeditor
-      endfor
-      endform <!--mine-->
-      endif
-      endproc
-      endwhile
-      fi
-      for
-      form
-      from
-      if
-      nocheck
-      noprogress
-      not
-      nowarn
-      or
-      proc
-      procedure <!--mine-->
-      repeat
-      to
-      until
-      warn
-      while
+      <!--keywords 1: beginning of a line-->
+            and <!--moved to: Operators 2: logic-->
+            assert
+            elif
+            else
+            elsif
+            endeditor
+            endfor
+            endform <!--mine-->
+            endif
+            endproc
+            endwhile
+            fi
+            for
+            form
+            if
+            nocheck
+            noprogress
+            not <!--moved to: Operators 2: logic-->
+            nowarn
+            or <!--moved to: Operators 2: logic-->
+            proc
+            procedure <!--mine-->
+            repeat
+            until
+            warn
+            while
+      <!--keywords 2: in-line (from, to)-->
+            from <!--moved-->
+            to <!--moved-->
 
 <!--formTypes-->
       boolean
@@ -402,34 +404,36 @@ v.0.2
       windows
 
 <!--operators-->
-      !
-      !=
-      %
-      &amp;
-      &gt;
-      &gt;&lt;
-      &gt;=
-      &lt;
-      &lt;=
-      *
-      *=
-      +
-      +=
-      -
-      -=
-      /
-      /=
-      =
-      == <!--mine-->
-      ^
-      and
-      dir <!--mine-->
-      div <!--mine-->
-      mod <!--mine-->
-      not
-      or
-      |
-
+      <!--Operators 1: all non-alphabetical-->
+            ! <!--removed-->
+            !=
+            %
+            &amp;
+            &gt;
+            &gt;&lt;
+            &gt;=
+            &lt;
+            &lt;=
+            *
+            *=
+            +
+            +=
+            -
+            -=
+            /
+            /=
+            =
+            == <!--mine-->
+            ^
+            |
+      <!--Operators 2: logic-->
+            and <!--mine-->
+            not <!--mine-->
+            or <!--mine-->
+      <!--Operators 3: mathematical alphabetic-->
+            div <!--mine-->
+            mod <!--mine-->
+ 
 <!--functions-->
       abs
       actanh
