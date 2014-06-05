@@ -195,7 +195,7 @@
                 </dict>
               </dict>
               <key>match</key>
-              <string>\b([a-z][a-zA-Z_0-9]*)\s*((?=,)|(?=$)|(?=\)))</string>
+              <string>\b([a-z][a-zA-Z0-9_\$]*)\s*((?=,)|(?=$)|(?=\)))</string>
             </dict>
           </array>
         </dict>
@@ -204,7 +204,7 @@
     <!--procedure calls-->
     <dict>
       <key>match</key>
-      <string>(^\s*call)|(^\s*@[a-zA-Z_0-9]*(?![A-Za-z0-9_]))</string>
+      <string>(^\s*call)|(^\s*@[a-zA-Z0-9_]*(?![a-zA-Z0-9_]))</string>
       <key>name</key>
       <string>entity.name.function.praat</string>
     </dict>
@@ -313,7 +313,7 @@
     <!--functions-->
     <dict>
       <key>match</key>
-      <string>(^|\s*)(abs|actanh|appendFile|appendFileLine|appendInfo|appendInfoLine|arccos|arccosh|arcsin|arcsinh|arctan|arctan2|barkToHerz|beginPause|besselI|besselK|beta|binomialP|binomialQ|ceiling|chiSquareP|chiSquareQ|chooseDirectory\$|chooseReadFile\$|cos|cosh|createDirectory|demoClicked|demoClickedIn|demoCommandKeyPressed|demoExtraControlKeyPressed|demoInput|demoKey\$|demoKeyPressed|demoOptionKeyPressed|demoShiftKeyPressed|demoShow|demoWaitForInput|demoWindowTitle|demoX|demoY|differenceLimensToPhon|endPause|endsWith|environment\$|erb|erbToHertz|erf|erfc|exp|extractLine\$|extractNumber|extractWord\$|fisherP|fisherQ|floor|gaussP|gaussQ|hertzToBark|hertzToErb|hertzToMel|hertzToSemitones|imax|imin|index|index_regex|invBinomialP|invBinomialQ|invChiSquareQ|invFisherQ|invGaussQ|invSigmoid|invStudentQ|left\$|length|ln|lnGamma|log10|log2|max|melToHertz|mid\$|min|numberOfSelected|phonToDifferenceLimens|randomGauss|randomInteger|randomPoisson|randomUniform|replace\$|replace_regex\$|right\$|rindex|rindex_regex|round|selected|selected\$|semitonesToHerz|sigmoid|sin|sinc|sincpi|sinh|sqrt|startsWith|string\$|studentP|studentQ|tan|tanh|variableExists|writeFile|writeFileLine|writeInfo|writeInfoLine)((?=\s)|(?=:))</string>
+      <string>(^|\s*)(abs|actanh|appendFileLine|appendFile|appendInfoLine|appendInfo|arccosh|arccos|arcsinh|arcsin|arctan2|arctan|barkToHerz|beginPause|besselI|besselK|beta|binomialP|binomialQ|ceiling|chiSquareP|chiSquareQ|chooseDirectory\$|chooseReadFile\$|cosh|cos|createDirectory|demoClickedIn|demoClicked|demoCommandKeyPressed|demoExtraControlKeyPressed|demoInput|demoKey\$|demoKeyPressed|demoOptionKeyPressed|demoShiftKeyPressed|demoShow|demoWaitForInput|demoWindowTitle|demoX|demoY|differenceLimensToPhon|endPause|endsWith|environment\$|erbToHertz|erb|erfc|erf|exp|extractLine\$|extractNumber|extractWord\$|fisherP|fisherQ|floor|gaussP|gaussQ|hertzToBark|hertzToErb|hertzToMel|hertzToSemitones|imax|imin|index_regex|index|invBinomialP|invBinomialQ|invChiSquareQ|invFisherQ|invGaussQ|invSigmoid|invStudentQ|left\$|length|ln|lnGamma|log10|log2|max|melToHertz|mid\$|min|numberOfSelected|phonToDifferenceLimens|randomGauss|randomInteger|randomPoisson|randomUniform|replace\$|replace_regex\$|right\$|rindex_regex|rindex|round|selected\$|selected|semitonesToHerz|sigmoid|sinc|sin|sincpi|sinh|sqrt|startsWith|string\$|studentP|studentQ|tanh|tan|variableExists|writeFileLine|writeFile|writeInfoLine|writeInfo)\b((?=\s*)|(?=:)|(?=\())</string>
       <key>name</key>
       <string>support.function.builtin.praat</string>
     </dict>
@@ -327,7 +327,7 @@
     <!--object functions-->
     <dict>
       <key>match</key>
-      <string>(^|\s*)(exitScript|minusObject|plusObject|removeObject|runScript|selectObject)(?=:)</string>
+      <string>(^|\s*)(exitScript|minusObject|plusObject|removeObject|runScript|selectObject)((?=:)|(?=\())</string>
       <key>name</key>
       <string>support.function.builtin.praat</string>
     </dict>
