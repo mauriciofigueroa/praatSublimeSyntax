@@ -536,6 +536,7 @@ v.0.2
       sinh
       sqrt
       startsWith
+      string$ <!--mine-->
       studentP
       studentQ
       tan
