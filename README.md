@@ -24,7 +24,7 @@ predefinedVariables, functions, object functions and procedures.
 ## Installation
 
 This syntax highlighter, just as [Sublime Text][], can be installed in Windows,
-Linux or (Mac) OS X. These are the instructions:
+Linux and (Mac) OS X. These are the instructions:
 * Download `praat.tmLanguage` and the six snippet files (you can just clone
 the whole repository if you want).
 * Open Sublime Text and go to `Preferences` > `Browse Packages...`.
@@ -36,7 +36,7 @@ All your files ending in any of the most common Praat script extensions
 (`.praat`, `.script`, `.psc`, `.praat_script`, `.praatscript`,
 `.praat-script`, `.praat-batch`, `.proc`) should automatically be
 identified and highlighted by Sublime Text. Alternatively, you can
-select highlighting for Praat by selecting `View/Syntax/Praat`.
+select highlighting for Praat by selecting `View` > `Syntax` > `Praat`.
 
 ## Inspiration for this highlighter
 
