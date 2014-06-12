@@ -23,16 +23,18 @@ predefinedVariables, functions, object functions and procedures.
 
 ## Installation
 
-* Download `praat.tmLanguage` and the snippet files.
-* Save them into your package folder. Under Windows 7, the path should be:
-`C:\Users\YOUR_USER_NAME\AppData\Roaming\Sublime Text 2\Packages\User`.
-Note that "AppData" is normally a hidden folder. A similar path should work
-for other versions of Sublime Text and/or Windows.
+This syntax highlighter, just as [Sublime Text][], can be installed in Windows,
+Linux or (Mac) OS X. These are the instructions:
+* Download `praat.tmLanguage` and the six snippet files (you can just clone
+the whole repository if you want).
+* Open Sublime Text and go to `Preferences` > `Browse Packages...`.
+* There, create a folder called "Praat" and save all the downloaded files inside
+that new folder.
 * Restart Sublime Text.
 
-If your files end in any of the most common Praat script extensions
+All your files ending in any of the most common Praat script extensions
 (`.praat`, `.script`, `.psc`, `.praat_script`, `.praatscript`,
-`.praat-script`, `.praat-batch`, `.proc`), they should automatically be
+`.praat-script`, `.praat-batch`, `.proc`) should automatically be
 identified and highlighted by Sublime Text. Alternatively, you can
 select highlighting for Praat by selecting `View/Syntax/Praat`.
 
