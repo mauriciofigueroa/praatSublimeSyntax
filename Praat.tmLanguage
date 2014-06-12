@@ -222,7 +222,7 @@
     <!--keywords 2: in-line (from, to)-->
     <dict>
       <key>match</key>
-      <string>(\s*)(from|to)(?=\s)</string>
+      <string>(\s+)(from|to)(?=\s)</string>
       <key>name</key>
       <string>keyword.control.praat</string>
       <!--PROBLEM 1: Currently not working.-->
@@ -294,7 +294,7 @@
     <!--Operators 2: logic-->
     <dict>
       <key>match</key>
-      <string>\s+(and|or|not)(?=.*(!=|&gt;|&gt;&lt;|&gt;=|&lt;|&lt;=|=|==))</string>
+      <string>\s+(and|or|not)(?=.*(!=|&gt;|&gt;&lt;|&gt;=|&lt;|&lt;=|==))</string>
       <key>name</key>
       <string>keyword.operator.praat</string>
     </dict>
