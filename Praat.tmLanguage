@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
 	Praat syntax highlighting for Sublime Text 2
-	v.0.27
+	v.0.28
 	Author: Mauricio Figueroa (mauriciofigueroac@gmail.com)
 
   =TODO=  
@@ -11,6 +11,8 @@
     - Resolve in-line matching problems.
 
   =Changes=
+    - 0.28: * Fixed bug related to identification of numerals before
+              closing-parenthesis.
     - 0.27: * Improved numeral identification. Now it includes
               percent sign at the end of numbers numbers such as "5e6".
     - 0.26: * Semicolon comments now included.
@@ -134,7 +136,7 @@
     <!--numerals-->
     <dict>
       <key>match</key>
-      <string>\b(([0-9]+(\.[0-9]+)?e[0-9]+(\.[0-9]+)?(?=($|\s*|\b|,){1,1})|[0-9]+(\.[0-9]+)?%?(?=($|\s+|;|,){1,1})))</string>
+      <string>\b(([0-9]+(\.[0-9]+)?e[0-9]+(\.[0-9]+)?(?=($|\s+|\b|;|,|\)){1,1})|[0-9]+(\.[0-9]+)?%?(?=($|\s+|;|,|\)){1,1})))</string>
       <key>name</key>
       <string>constant.numeric.praat</string>
     </dict>
