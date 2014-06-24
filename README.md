@@ -2,16 +2,6 @@
 
 #### Praat syntax highlighting for Sublime Text
 
-## Disclaimer
-
-Although this Praat syntax highlighter already works relatively
-well in [Sublime Text][], the highlighter is currently under development.
-Some aspects still need to be defined, refined and/or fixed.
-
-So far, it aims to work with the latest Praat syntax. Compatibility with
-previous syntax versions is only partial. I hope to gradually improve
-compatibility as I'm able to work on newer versions.
-
 ## Features
 
 * Highlighting of Praat's numerals, keywords, form elements,
@@ -46,6 +36,16 @@ the lists of command definitions are pretty much the same. The quotation
 and double quotation highlighting method was taken from the R syntax
 highlighter for Sublime Text. The procedure highlighting is inspired in
 the system used in Python's syntax highlighter for Sublime Text.
+
+## Disclaimer
+
+Although this Praat syntax highlighter already works well in [Sublime Text][],
+it still contains some bugs that need some attention. On the same note, several
+functionalities of the highlighter could be refined to gain efficiency and elegance.
+
+So far, it aims to work with the latest Praat syntax. Compatibility with
+previous syntax versions is only partial. I hope to gradually improve
+compatibility as I'm able to work on newer versions.
 
 [syntax highlighter for Kate]: https://github.com/jjatria/praatKateSyntax
 [Sublime Text]: http://www.sublimetext.com/
