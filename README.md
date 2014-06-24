@@ -41,7 +41,7 @@ the system used in Python's syntax highlighter for Sublime Text.
 
 Although this Praat syntax highlighter already works well in [Sublime Text][],
 it still contains some bugs that need some attention. On the same note, several
-functionalities of the highlighter could be refined to gain efficiency and elegance.
+functionalities of the highlighter could be refined to improve efficiency.
 
 So far, it aims to work with the latest Praat syntax. Compatibility with
 previous syntax versions is only partial. I hope to gradually improve
