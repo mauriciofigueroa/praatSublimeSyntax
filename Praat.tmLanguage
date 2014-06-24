@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
-	Praat syntax highlighting for Sublime Text 2
-	v.0.28
-	Author: Mauricio Figueroa (mauriciofigueroac@gmail.com)
+	Praat syntax highlighting for Sublime Text
+	v.0.29
+	
+  Author:
+  Mauricio Figueroa
+  mauriciofigueroac@gmail.com
+  www.mauriciofigueroa.cl/index_eng.html
 
-  =TODO=  
+  =To do=  
     - Improve compatibility with older syntax definitions.
-    - Add highlighting for common invalid/illegal sequences.
-    - Resolve in-line matching problems.
+    - Deal with broken-line syntax.
+    - Highlighting of single quotes for variable substitution.
 
   =Changes=
+    - 0.29: * Fixed bug related to commands identification before
+              single quotation marks.
+            * Improved matching conditions for "from" and "then".
     - 0.28: * Fixed bug related to identification of numerals before
               closing-parenthesis.
-    - 0.27: * Improved numeral identification. Now it includes
-              percent sign at the end of numbers numbers such as "5e6".
-    - 0.26: * Semicolon comments now included.
+    - 0.27: * Improved numeral identification. Now it includes percent
+              sign at the end of numbers numbers such as "5e6".
+    - 0.26: * Inline comments now highlighted as such.
     - 0.25: * Operator split: all non-alphabetical, logic and
               mathematical alphabetical.
-            * Improved operator matching to avoid some false in-line
-              matches.
+            * Improved keyword and operator matching to avoid some false
+              matches after formtypes and directives.
             * Keyword split: beginning of a line vs. in-line.
     - 0.24: * Several small corrections to matching definitions.
     - 0.23: * Procedures highlighting enabled.
@@ -38,8 +45,9 @@
             * Fixed bug for commands: only match after "^|\s*".
 
   =Bugs=
-    - Matching of "from" and "to" in in-line contexts after "comment",
-      "exit", "pause", etc.
+    - False matches of some keywords and operators are happening after
+      formtypes and directives (such as "comment" and "exit"). Look for
+      alternatives to negative lookbehind declarations.
 
 	This language definition is free software: you can redistribute
 	it and/or modify it under the terms of the GNU General Public
@@ -216,7 +224,7 @@
     <!--keywords 1: beginning of a line-->
     <dict>
       <key>match</key>
-      <string>(^\s*)(assert|elif|else|elsif|endeditor|endfor|endform|endif|endproc|endwhile|fi|form|for|if|nocheck|noprogress|nowarn|proc|procedure|repeat|until|warn|while)(?=\s|$)</string>
+      <string>(\s*)(assert|elif|else|elsif|endeditor|endfor|endform|endif|endproc|endwhile|fi|form|for|if|nocheck|noprogress|nowarn|proc|procedure|repeat|then(?=.*fi)|until|warn|while)(?=\s|$)</string>
       <key>name</key>
       <string>keyword.control.praat</string>
       <!--PROBLEM 1: tabs after loops and conditional jumps should be illegal; currently they aren't.-->
@@ -224,7 +232,7 @@
     <!--keywords 2: in-line (from, to)-->
     <dict>
       <key>match</key>
-      <string>(\s+)(from|to)(?=\s)</string>
+      <string>(\s+)(from(?=.*to)|to)(?=\s)</string>
       <key>name</key>
       <string>keyword.control.praat</string>
       <!--PROBLEM 1: Currently not working.-->
@@ -232,7 +240,7 @@
     <!--formTypes-->
     <dict>
       <key>match</key>
-      <string>^\s*(boolean|button|choice|comment|integer|natural|option|optionmenu|positive|real|sentence|text|word)(?=\s)</string>
+      <string>^\s*(boolean|button|choice|comment|demo|integer|natural|option|optionmenu|positive|real|sentence|text|word)(?=\s)</string>
       <key>name</key>
       <string>support.class.praat</string>
     </dict>
@@ -275,7 +283,7 @@
     <!--commands-->
     <dict>
       <key>match</key>
-      <string>(\s|^\s*)(Add|Append|Arrow|Autocorrelate|Axes|Change|Close|Colour|Combine|Compute|Concatenate|Convert|Convolve|Copy|Count|Courier|Create|Cross|Dashed|De|Deepen|Dotted|Down|Draw|Duplicate|Edit|Erase|Extend|Extract|Filter|Filtering|Font|Formula|Get|Helvetica|Horizontal|Hum|Info|Insert|Inspect|Interpolate|Is|Kill|Lengthen|Line|List|Logarithmic|Marks|Merge|Move|Multiply|New|One|Override|Paint|Palatino|Picture|Pitch|Plain|Play|PostScript|Pre|Randomize|Read|Record|Remove|Rename|Replace|Resample|Reverse|Save|Scale|Scatter|Select|Set|Shift|Show|Smooth|Solid|Sort|Sound|Speckle|Subtract|Text|Times|To|Vertical|View|Write|Zoom)(\s*.*(?=:\s+)|\s*.*(?=\.{3}\s+)|(\s*)(.*$))</string>
+      <string>(\s|^\s*)(Add|Append|Arrow|Autocorrelate|Axes|Change|Close|Colour|Combine|Compute|Concatenate|Convert|Convolve|Copy|Count|Courier|Create|Cross|Dashed|De|Deepen|Dotted|Down|Draw|Duplicate|Edit|Erase|Extend|Extract|Filter|Filtering|Font|Formula|Get|Helvetica|Horizontal|Hum|Info|Insert|Inspect|Interpolate|Is|Kill|Lengthen|Line|List|Logarithmic|Marks|Merge|Move|Multiply|New|One|Override|Paint|Palatino|Picture|Pitch|Plain|Play|PostScript|Pre|Randomize|Read|Record|Remove|Rename|Replace|Resample|Reverse|Save|Scale|Scatter|Select|Set|Shift|Show|Smooth|Solid|Sort|Sound|Speckle|Subtract|Times|To|Vertical|View|Write|Zoom)(\s*.*(?=:\s+)|\s*.*(?=\.{3}\s+)|(\s*)([a-zA-Z ]*)(?!'))</string>
       <key>name</key>
       <string>support.class.praat</string>
     </dict>
@@ -296,7 +304,7 @@
     <!--Operators 2: logic-->
     <dict>
       <key>match</key>
-      <string>\s+(and|or|not)(?=.*(!=|&gt;|&gt;&lt;|&gt;=|&lt;|&lt;=|==))</string>
+      <string>\s+(and|or|not)(?=.*(!|!=|&gt;|&gt;&lt;|&gt;=|&lt;|&lt;=|==))</string>
       <key>name</key>
       <string>keyword.operator.praat</string>
     </dict>
