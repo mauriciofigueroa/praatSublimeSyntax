@@ -12,6 +12,13 @@ form Highlighter test
   natural Nat 4
 endform
 
+# External scripts
+include /path/to/file
+runScript: "/path/to/file"
+execute /path/to/file
+
+stopwatch
+
 # old-style procedure call
 call oldStyle "quoted" 2 unquoted string
 assert oldStyle.local = 1
@@ -22,15 +29,14 @@ if praatVersion >= 5364
   # New-style procedure call with colon
   @newStyle: "quoted", 2, "quoted string"
 endif
-assert newStyle.local = 1
 
 # if-block with built-in variables
 if windows
   # We are on Windows
 elsif unix = 1 or !macintosh
-  # We are on Linux
+  exitScript: "We are on Linux"
 else macintosh == 1
-  # We are on Mac
+  exit We are on Mac
 endif
 
 # inline if with inline comment
@@ -63,8 +69,8 @@ for i from 1 to n
   pitch = noprogress To Pitch (ac): 0, 75, 15, "no",
     ...0.03, 0.45, 0.01, 0.35, 0.14, 600
     
-  # Old-style command with assignment
-  minimum = Get minimum... 0 0 "Hertz" Parabolic
+  # do-style command with assignment
+  minimum = do("Get minimum...", 0, 0, "Hertz", "Parabolic")
 
   # New-style multi-line command call with broken strings
   table = Create Table with column names: "table", 0,
@@ -76,7 +82,8 @@ for i from 1 to n
     
   # Picture window commands
   selectObject: sound
-  Select inner viewport: 1, 6, 0.5, 1.5
+  # do-style command
+  do("Select inner viewport...", 1, 6, 0.5, 1.5)
   Black
   Draw... 0 0 0 0 "no" Curve
   Draw inner box
@@ -88,21 +95,31 @@ for i from 1 to n
   demo Select inner viewport... 0 100 0 100
   demo Axes... 0 100 0 100
   demo Paint rectangle... white 0 100 0 100
-  demo Purple
-  demo Times
-  demo 24
-  # The "to" in "Click to finish" should not be a keyword
   demo Text... 50 centre 50 half Click to finish
   demoWaitForInput ( )
   demo Erase all
-  demo Select inner viewport... 0 100 0 100
-  demo Axes... 0 100 0 100
-  demo Paint rectangle... purple 0 100 0 100
-  demo Yellow
-  demo Times
-  demo 24
-  demo Text... 50 centre 50 half Finished
+  demo Text: 50, "centre", 50, "half", "Finished"
 endfor
+
+# An old-style sendpraat block
+sendpraat Praat
+  ...'newline$' Create Sound as pure tone... "tone" 1 0 0.4 44100 440 0.2 0.01 0.01
+  ...'newline$' Play
+  ...'newline$' Remove
+
+# A new-style sendpraat block
+beginSendPraat: "Praat"
+  Create Sound as pure tone: "tone", 1, 0, 0.4, 44100, 440, 0.2, 0.01, 0.01
+  duration = Get total duration
+  Remove
+endSendPraat: "duration"
+appendInfoLine: "The generated sound lasted for ", duration, "seconds"
+
+time = stopwatch
+clearinfo
+echo This script took 
+print 'time' seconds to 
+printline execute.
 
 # Old-style procedure declaration
 procedure oldStyle .str1$ .num .str2$
