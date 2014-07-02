@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
 	Praat syntax highlighting for Sublime Text
-	v.0.29
+	v.0.30
 	
   Author:
   Mauricio Figueroa
@@ -15,6 +15,8 @@
     - Highlighting of single quotes for variable substitution.
 
   =Changes=
+    - 0.30: * Added highlighting and folding for "editor/endeditor".
+            * Bug regarding Praat objects highlighting fixed.
     - 0.29: * Fixed bug related to commands identification before
               single quotation marks.
             * Improved matching conditions for "from" and "then".
@@ -79,9 +81,9 @@
   <string>Praat</string>
   <!--code folding-->
   <key>foldingStartMarker</key>
-  <string>^\s*(for|if|form|procedure|proc|repeat|while)(?=\s)</string>
+  <string>^\s*(editor|for|if|form|procedure|proc|repeat|while)(?=\s)</string>
   <key>foldingStopMarker</key>
-  <string>^\s*(endfor|elsif|else|endif|endform|endproc|endwhile|until)(?=\s*)</string>
+  <string>^\s*(endeditor|endfor|elsif|else|endif|endform|endproc|endwhile|until)(?=\s*)</string>
   <!--patterns-->
   <key>patterns</key>
   <array>
@@ -224,7 +226,7 @@
     <!--keywords 1: beginning of a line-->
     <dict>
       <key>match</key>
-      <string>(\s*)(assert|elif|else|elsif|endeditor|endfor|endform|endif|endproc|endwhile|fi|form|for|if|nocheck|noprogress|nowarn|proc|procedure|repeat|then(?=.*fi)|until|warn|while)(?=\s|$)</string>
+      <string>(\s*)(assert|editor|elif|else|elsif|endeditor|endfor|endform|endif|endproc|endwhile|fi|form|for|if|nocheck|noprogress|nowarn|proc|procedure|repeat|then(?=.*fi)|until|warn|while)(?=\s|$)</string>
       <key>name</key>
       <string>keyword.control.praat</string>
       <!--PROBLEM 1: tabs after loops and conditional jumps should be illegal; currently they aren't.-->
@@ -247,7 +249,7 @@
     <!--objects-->
     <dict>
       <key>match</key>
-      <string>\s+(Activation|AffineTransform|AmplitudeTier|Art|Artword|Autosegment|BarkFilter|Categories|CCA|Cepstrum|Cepstrumc|ChebyshevSeries|ClassificationTable|Cochleagram|Collection|Configuration|Confusion|ContingencyTable|Corpus|Correlation|Covariance|CrossCorrelationTable|CrossCorrelationTables|Diagonalizer|Discriminant|Dissimilarity|Distance|Distributions|DTW|DurationTier|EEG|Eigen|ERP|ERPTier|Excitation|Excitations|ExperimentMFC|FeatureWeights|FFNet|Formant|FormantFilter|FormantGrid|FormantPoint|FormantTier|GaussianMixture|Harmonicity|HMM|HMM_Observation|HMM_ObservationSequence|HMM_State|HMM_StateSequence|Index|Intensity|IntensityTier|IntervalTier|ISpline|KlattGrid|KlattTable|KNN|Label|LegendreSeries|LFCC|LinearRegression|LogisticRegression|LongSound|LPC|Ltas|Manipulation|ManPages|Matrix|MelFilter|MFCC|MixingMatrix|Movie|MSpline|Network|OTGrammar|OTHistory|OTMulti|PairDistribution|ParamCurve|Pattern|PCA|Permutation|Pitch|PitchTier|PointProcess|Polygon|Polynomial|Procrustes|RealPoint|RealTier|ResultsMFC|Roots|Salience|ScalarProduct|Similarity|SimpleString|SortedSetOfString|Sound|Speaker|Spectrogram|Spectrum|SpectrumTier|SpeechSynthesizer|SpellingChecker|SPINET|SSCP|Strings|StringsIndex|SVD|Table|TableOfReal|TextGrid|TextInterval|TextPoint|TextTier|Tier|Transition|VocalTract|Weight|WordList)(?=\s*$)</string>
+      <string>\s+(Activation|AffineTransform|AmplitudeTier|Art|Artword|Autosegment|BarkFilter|Categories|CCA|Cepstrum|Cepstrumc|ChebyshevSeries|ClassificationTable|Cochleagram|Collection|Configuration|Confusion|ContingencyTable|Corpus|Correlation|Covariance|CrossCorrelationTable|CrossCorrelationTables|Diagonalizer|Discriminant|Dissimilarity|Distance|Distributions|DTW|DurationTier|EEG|Eigen|ERP|ERPTier|Excitation|Excitations|ExperimentMFC|FeatureWeights|FFNet|Formant|FormantFilter|FormantGrid|FormantPoint|FormantTier|GaussianMixture|Harmonicity|HMM|HMM_Observation|HMM_ObservationSequence|HMM_State|HMM_StateSequence|Index|Intensity|IntensityTier|IntervalTier|ISpline|KlattGrid|KlattTable|KNN|Label|LegendreSeries|LFCC|LinearRegression|LogisticRegression|LongSound|LPC|Ltas|Manipulation|ManPages|Matrix|MelFilter|MFCC|MixingMatrix|Movie|MSpline|Network|OTGrammar|OTHistory|OTMulti|PairDistribution|ParamCurve|Pattern|PCA|Permutation|Pitch|PitchTier|PointProcess|Polygon|Polynomial|Procrustes|RealPoint|RealTier|ResultsMFC|Roots|Salience|ScalarProduct|Similarity|SimpleString|SortedSetOfString|Sound|Speaker|Spectrogram|Spectrum|SpectrumTier|SpeechSynthesizer|SpellingChecker|SPINET|SSCP|Strings|StringsIndex|SVD|Table|TableOfReal|TextGrid|TextInterval|TextPoint|TextTier|Tier|Transition|VocalTract|Weight|WordList)(?=\s+)</string>
       <key>name</key>
       <string>constant.other.placeholder.praat</string>
       <!--OBSERVATION 1: Alternatives such as "<string>entity.name.type.class.praat</string>" not working.-->
@@ -283,7 +285,7 @@
     <!--commands-->
     <dict>
       <key>match</key>
-      <string>(\s|^\s*)(Add|Append|Arrow|Autocorrelate|Axes|Change|Close|Colour|Combine|Compute|Concatenate|Convert|Convolve|Copy|Count|Courier|Create|Cross|Dashed|De|Deepen|Dotted|Down|Draw|Duplicate|Edit|Erase|Extend|Extract|Filter|Filtering|Font|Formula|Get|Helvetica|Horizontal|Hum|Info|Insert|Inspect|Interpolate|Is|Kill|Lengthen|Line|List|Logarithmic|Marks|Merge|Move|Multiply|New|One|Override|Paint|Palatino|Picture|Pitch|Plain|Play|PostScript|Pre|Randomize|Read|Record|Remove|Rename|Replace|Resample|Reverse|Save|Scale|Scatter|Select|Set|Shift|Show|Smooth|Solid|Sort|Sound|Speckle|Subtract|Times|To|Vertical|View|Write|Zoom)(\s*.*(?=:\s+)|\s*.*(?=\.{3}\s+)|(\s*)([a-zA-Z ]*)(?!'))</string>
+      <string>(\s|^\s*)(Add|Append|Arrow|Autocorrelate|Axes|Change|Close|Colour|Combine|Compute|Concatenate|Convert|Convolve|Copy|Count|Courier|Create|Cross|Dashed|De|Deepen|Dotted|Down|Draw|Duplicate|Edit|Erase|Extend|Extract|Filter|Filtering|Font|Formula|Get|Helvetica|Horizontal|Hum|Info|Insert|Inspect|Interpolate|Is|Kill|Lengthen|Line|List|Logarithmic|Marks|Merge|Move|Multiply|New|One|Override|Paint|Palatino|Picture|Pitch|Plain|Play|PostScript|Pre|Randomize|Read|Record|Remove|Rename|Replace|Resample|Reverse|Save|Scale|Scatter|Select|Set|Shift|Show|Smooth|Solid|Sort|Speckle|Subtract|Times|To|Vertical|View|Write|Zoom)(\s*.*(?=:\s+)|\s*.*(?=\.{3}\s+)|(\s*)([a-zA-Z ]*)(?!'))</string>
       <key>name</key>
       <string>support.class.praat</string>
     </dict>
