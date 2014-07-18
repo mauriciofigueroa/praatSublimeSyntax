@@ -1,0 +1,23 @@
+- 0.27: * Improved numeral identification. Now it includes percent
+          sign at the end of numbers numbers such as "5e6".
+- 0.26: * Inline comments now highlighted as such.
+- 0.25: * Operator split: all non-alphabetical, logic and
+          mathematical alphabetical.
+        * Improved keyword and operator matching to avoid some false
+          matches after formtypes and directives.
+        * Keyword split: beginning of a line vs. in-line.
+- 0.24: * Several small corrections to matching definitions.
+- 0.23: * Procedures highlighting enabled.
+- 0.22: * Added comparison operator: "==".
+        * Removed unnecessary step ("source") from root groups.
+        * Added root group definitions for: methods, objects,
+          objectDirectives, systemDirectives, fileDirectives,
+          directives, colors, predefinedVariables, functions,
+          object functions.
+        * Improved several matches by using positive lookahead at
+          the end of lines (no white space selected). Other type of
+          improvements also included.
+        * Some cleaning done to improve readability.
+- 0.21: * Removed escape character ("\\.") for regular expressions
+          within quotation marks.
+        * Fixed bug for commands: only match after "^|\s*".
