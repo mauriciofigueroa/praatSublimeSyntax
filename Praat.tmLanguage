@@ -210,7 +210,7 @@
     <!--keywords 2: in-line (from, to, fi)-->
     <dict>
       <key>match</key>
-      <string>(\s+)(from(?=.*to)(?=\s)|to(?=\s)|fi($|\s*))</string>
+      <string>(\s+)(from(?=.*to)(?=\s)|to(?=\s)|fi($|\s+))</string>
       <key>name</key>
       <string>keyword.control.praat</string>
       <!--PROBLEM 1: Currently not working.-->
