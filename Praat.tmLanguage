@@ -2,19 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
 	Praat syntax highlighting for Sublime Text
-	v.0.31
+	v.0.32
 	
-  Author:
-  Mauricio Figueroa
-  mauriciofigueroac@gmail.com
-  www.mauriciofigueroa.cl/index_eng.html
+  Author: Mauricio Figueroa (www.mauriciofigueroa.cl)
 
   =To do=  
     - Improve compatibility with older syntax definitions.
     - Deal with broken-line syntax.
     - Highlighting of single quotes for variable substitution.
 
-  =Changes=
+  =Changes (see "logfile.txt" for older)=
+    - 0.32: * Corrected bug affecting ".proc" and "fi".
     - 0.31: * Added functions starting with "Text".
     - 0.30: * Added highlighting and folding for "editor/endeditor".
             * Bug regarding Praat objects highlighting fixed.
@@ -23,29 +21,6 @@
             * Improved matching conditions for "from" and "then".
     - 0.28: * Fixed bug related to identification of numerals before
               closing-parenthesis.
-    - 0.27: * Improved numeral identification. Now it includes percent
-              sign at the end of numbers numbers such as "5e6".
-    - 0.26: * Inline comments now highlighted as such.
-    - 0.25: * Operator split: all non-alphabetical, logic and
-              mathematical alphabetical.
-            * Improved keyword and operator matching to avoid some false
-              matches after formtypes and directives.
-            * Keyword split: beginning of a line vs. in-line.
-    - 0.24: * Several small corrections to matching definitions.
-    - 0.23: * Procedures highlighting enabled.
-    - 0.22: * Added comparison operator: "==".
-            * Removed unnecessary step ("source") from root groups.
-            * Added root group definitions for: methods, objects,
-              objectDirectives, systemDirectives, fileDirectives,
-              directives, colors, predefinedVariables, functions,
-              object functions.
-            * Improved several matches by using positive lookahead at
-              the end of lines (no white space selected). Other type of
-              improvements also included.
-            * Some cleaning done to improve readability.
-    - 0.21: * Removed escape character ("\\.") for regular expressions
-              within quotation marks.
-            * Fixed bug for commands: only match after "^|\s*".
 
   =Bugs=
     - False matches of some keywords and operators are happening after
@@ -227,15 +202,15 @@
     <!--keywords 1: beginning of a line-->
     <dict>
       <key>match</key>
-      <string>(\s*)(assert|editor|elif|else|elsif|endeditor|endfor|endform|endif|endproc|endwhile|fi|form|for|if|nocheck|noprogress|nowarn|proc|procedure|repeat|then(?=.*fi)|until|warn|while)(?=\s|$)</string>
+      <string>(^|\s+)(assert|editor|elif|else|elsif|endeditor|endfor|endform|endif|endproc|endwhile|form|for|if|nocheck|noprogress|nowarn|proc|procedure|repeat|then(?=.*fi)|until|warn|while)(?=\s|$)</string>
       <key>name</key>
       <string>keyword.control.praat</string>
       <!--PROBLEM 1: tabs after loops and conditional jumps should be illegal; currently they aren't.-->
     </dict>
-    <!--keywords 2: in-line (from, to)-->
+    <!--keywords 2: in-line (from, to, fi)-->
     <dict>
       <key>match</key>
-      <string>(\s+)(from(?=.*to)|to)(?=\s)</string>
+      <string>(\s+)(from(?=.*to)(?=\s)|to(?=\s)|fi($|\s*))</string>
       <key>name</key>
       <string>keyword.control.praat</string>
       <!--PROBLEM 1: Currently not working.-->
