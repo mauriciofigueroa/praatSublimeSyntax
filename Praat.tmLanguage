@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
 	Praat syntax highlighting for Sublime Text
-	v.0.33
+	v.0.34
 	
   Author: Mauricio Figueroa (www.mauriciofigueroa.cl)
 
@@ -12,6 +12,8 @@
     - Highlighting of single quotes for variable substitution.
 
   =Changes (see "logfile.txt" for older)=
+    - 0.34: * Updated "pause" and "exit" to "pauseScript" and
+            * "exitScript".
     - 0.33: * Corrected: "View & Edit". Improved: single quotation
               mark highlighting.
     - 0.32: * Corrected bug affecting ".proc" and "fi".
@@ -254,7 +256,7 @@
     <!--directives-->
     <dict>
       <key>match</key>
-      <string>^\s*(clearinfo|echo|execute|exit|pause|print|printline|sendpraat|stopwatch)(?=\s|$)</string>
+      <string>^\s*(clearinfo|echo|execute|exitScript|exit|pauseScript|pause|printline|print|sendpraat|stopwatch)(?=\s|$|:)</string>
       <key>name</key>
       <string>support.function.builtin.praat</string>
     </dict>
