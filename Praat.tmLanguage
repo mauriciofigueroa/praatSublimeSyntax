@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
 	Praat syntax highlighting for Sublime Text
-	v.0.36
+	v.0.37
 	
   Author: Mauricio Figueroa (www.mauriciofigueroa.cl)
 
@@ -12,6 +12,7 @@
     - Highlighting of single quotes for variable substitution.
 
   =Changes (see "logfile.txt" for older)=
+    - 0.37: * Added "goto" and "label".
     - 0.36: * Added "chooseWriteFile$".
     - 0.35: * Added highlighting for "Open..." commands.
     - 0.34: * Updated "pause" and "exit" to "pauseScript" and
@@ -206,7 +207,7 @@
     <!--keywords 1: beginning of a line-->
     <dict>
       <key>match</key>
-      <string>(^|\s+)(assert|editor|elif|else|elsif|endeditor|endfor|endform|endif|endproc|endwhile|form|for|if|nocheck|noprogress|nowarn|proc|procedure|repeat|then(?=.*fi)|until|warn|while)(?=\s|$)</string>
+      <string>(^|\s+)(assert|editor|elif|else|elsif|endeditor|endfor|endform|endif|endproc|endwhile|form|for|goto|if|label|nocheck|noprogress|nowarn|proc|procedure|repeat|then(?=.*fi)|until|warn|while)(?=\s|$)</string>
       <key>name</key>
       <string>keyword.control.praat</string>
       <!--PROBLEM 1: tabs after loops and conditional jumps should be illegal; currently they aren't.-->
