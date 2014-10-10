@@ -1,3 +1,10 @@
+- 0.32: * Corrected bug affecting ".proc" and "fi".
+- 0.31: * Added functions starting with "Text".
+- 0.30: * Added highlighting and folding for "editor/endeditor".
+        * Bug regarding Praat objects highlighting fixed.
+- 0.29: * Fixed bug related to commands identification before
+          single quotation marks.
+        * Improved matching conditions for "from" and "then".
 - 0.28: * Fixed bug related to identification of numerals before
           closing-parenthesis.
 - 0.27: * Improved numeral identification. Now it includes percent

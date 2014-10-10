@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
 	Praat syntax highlighting for Sublime Text
-	v.0.37
+	v.0.38
 	
   Author: Mauricio Figueroa (www.mauriciofigueroa.cl)
 
@@ -12,6 +12,7 @@
     - Highlighting of single quotes for variable substitution.
 
   =Changes (see "logfile.txt" for older)=
+    - 0.38: * Added "Photo" object.
     - 0.37: * Added "goto" and "label".
     - 0.36: * Added "chooseWriteFile$".
     - 0.35: * Added highlighting for "Open..." commands.
@@ -19,13 +20,6 @@
             * "exitScript".
     - 0.33: * Corrected: "View & Edit". Improved: single quotation
               mark highlighting.
-    - 0.32: * Corrected bug affecting ".proc" and "fi".
-    - 0.31: * Added functions starting with "Text".
-    - 0.30: * Added highlighting and folding for "editor/endeditor".
-            * Bug regarding Praat objects highlighting fixed.
-    - 0.29: * Fixed bug related to commands identification before
-              single quotation marks.
-            * Improved matching conditions for "from" and "then".
 
   =Bugs=
     - False matches of some keywords and operators are happening after
