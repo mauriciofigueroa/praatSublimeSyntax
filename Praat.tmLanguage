@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
 	Praat syntax highlighting for Sublime Text
-	v.0.38
+	v.0.39
 	
   Author: Mauricio Figueroa (www.mauriciofigueroa.cl)
 
@@ -12,6 +12,7 @@
     - Highlighting of single quotes for variable substitution.
 
   =Changes (see "logfile.txt" for older)=
+    - 0.39: * Added "Fade..." functions.
     - 0.38: * Added "Photo" object.
     - 0.37: * Added "goto" and "label".
     - 0.36: * Added "chooseWriteFile$".
@@ -260,7 +261,7 @@
     <!--commands-->
     <dict>
       <key>match</key>
-      <string>(\s|^\s*)(Add|Append|Arrow|Autocorrelate|Axes|Change|Close|Colour|Combine|Compute|Concatenate|Convert|Convolve|Copy|Count|Courier|Create|Cross|Dashed|De|Deepen|Dotted|Down|Draw|Duplicate|Edit|Erase|Extend|Extract|Filter|Filtering|Font|Formula|Get|Helvetica|Horizontal|Hum|Info|Insert|Inspect|Interpolate|Is|Kill|Lengthen|Line|List|Logarithmic|Marks|Merge|Move|Multiply|New|One|Open|Override|Paint|Palatino|Picture|Pitch|Plain|Play|PostScript|Pre|Randomize|Read|Record|Remove|Rename|Replace|Resample|Reverse|Save|Scale|Scatter|Select|Set|Shift|Show|Smooth|Solid|Sort|Speckle|Subtract|Text|Times|To|Vertical|View &amp; Edit|View|Write|Zoom)(\s*.*(?=:\s+)|\s*.*(?=\.{3}\s+)|(\s*)([a-zA-Z ]*)(?!'))</string>
+      <string>(\s|^\s*)(Add|Append|Arrow|Autocorrelate|Axes|Change|Close|Colour|Combine|Compute|Concatenate|Convert|Convolve|Copy|Count|Courier|Create|Cross|Dashed|De|Deepen|Dotted|Down|Draw|Duplicate|Edit|Erase|Extend|Extract|Fade|Filter|Filtering|Font|Formula|Get|Helvetica|Horizontal|Hum|Info|Insert|Inspect|Interpolate|Is|Kill|Lengthen|Line|List|Logarithmic|Marks|Merge|Move|Multiply|New|One|Open|Override|Paint|Palatino|Picture|Pitch|Plain|Play|PostScript|Pre|Randomize|Read|Record|Remove|Rename|Replace|Resample|Reverse|Save|Scale|Scatter|Select|Set|Shift|Show|Smooth|Solid|Sort|Speckle|Subtract|Text|Times|To|Vertical|View &amp; Edit|View|Write|Zoom)(\s*.*(?=:\s+)|\s*.*(?=\.{3}\s+)|(\s*)([a-zA-Z ]*)(?!'))</string>
       <key>name</key>
       <string>support.class.praat</string>
     </dict>
