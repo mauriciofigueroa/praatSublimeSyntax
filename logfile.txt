@@ -1,3 +1,8 @@
+- 0.35: * Added highlighting for "Open..." commands.
+- 0.34: * Updated "pause" and "exit" to "pauseScript" and
+	* "exitScript".
+- 0.33: * Corrected: "View & Edit". Improved: single quotation
+	  mark highlighting.
 - 0.32: * Corrected bug affecting ".proc" and "fi".
 - 0.31: * Added functions starting with "Text".
 - 0.30: * Added highlighting and folding for "editor/endeditor".
