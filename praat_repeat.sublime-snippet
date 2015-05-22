@@ -4,7 +4,7 @@
 	<description>Repeat Loop</description>
 	<content><![CDATA[
 repeat
-	${2:}
+  ${2:}
 until ${1:}
 ]]></content>
 </snippet>

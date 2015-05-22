@@ -4,7 +4,7 @@
 	<description>Procedure</description>
 	<content><![CDATA[
 procedure ${1:procedureName}: ${2:argument_1}
-	${0:}
+  ${0:}
 endproc
 ]]></content>
 </snippet>

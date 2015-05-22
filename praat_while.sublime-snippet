@@ -4,7 +4,7 @@
 	<description>While Loop</description>
 	<content><![CDATA[
 while ${1:}
-	${0:}
+  ${0:}
 endwhile
 ]]></content>
 </snippet>

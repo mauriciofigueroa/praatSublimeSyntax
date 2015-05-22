@@ -4,7 +4,7 @@
 	<description>Formulary</description>
 	<content><![CDATA[
 form ${1:Title}
-	${0:#Content...}
+  ${0:#Content...}
 endform
 ]]></content>
 </snippet>

@@ -4,7 +4,7 @@
 	<description>If Condition</description>
 	<content><![CDATA[
 if ${1:}
-	${0:}
+  ${0:}
 endif
 ]]></content>
 </snippet>
